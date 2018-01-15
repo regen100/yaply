@@ -152,6 +152,7 @@ public:
 		LIST_SCALAR nrElements;
 		if (binary) {
 			istr.read((char*) (&nrElements), sizeof(LIST_SCALAR));
+			data[nr].resize(nrElements);
 			for (LIST_SCALAR ii = 0; ii < nrElements; ii++)
 				istr.read((char*) (&data[nr][ii]), sizeof(SCALAR));
 		} else {
